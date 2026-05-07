@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Orginal text</p>
+
+    <input type="text" id="nameInput" placeholder="Enter name">
+<button id="saveBtn">Save</button>
+
+<p id="display"></p>
+
+<script>
+let input2 = document.getElementById("nameInput");
+let button22 = document.getElementById("saveBtn");
+let display2 = document.getElementById("display");
+
+// Load saved name when page loads
+window.onload = () => {
+    let savedName = localStorage.getItem("name");
+    if (savedName) {
+        display.textContent = "Saved name: " + savedName;
+    }
+};
+
+// Save name to localStorage
+button22.addEventListener("click", () => {
+    localStorage.setItem("name", input.value);
+    display2.textContent = "Saved name: " + input.value;
+});
+</script>
+
+    <input type="text" id="inputBox">
+
+<script>
+let input1 = document.getElementById("inputBox");
+
+input.addEventListener("keydown", (e) => {
+    console.log(e.key);
+});
+</script>
+
+    <p id="count">0</p>
+<button id="btn">Increase</button>
+
+<script>
+let count = 0;
+
+let display = document.getElementById("count");
+let button3 = document.getElementById("btn");
+
+button.addEventListener("click", () => {
+    count++;
+    display.textContent = count;
+});
+</script>
+
+    <input type="text" id="myInput">
+<button id="btn">Submit</button>
+
+<script>
+let input = document.getElementById("myInput");
+let button1 = document.getElementById("btn");
+
+button.addEventListener("click", () => {
+    console.log(input.value);
+});
+</script>
+
+    <button id="myButton">Click Me</button>
+
+<script>
+let button = document.getElementById("myButton");
+
+button.addEventListener("click", () => {
+    console.log("Button clicked!");
+});
+</script>
+
+    <ul id="list"></ul>
+
+<script>
+let ul1 = document.getElementById("list");
+
+for (let i = 1; i <= 5; i++) {
+    let li = document.createElement("li");
+    li.textContent = "Item " + i;
+    ul1.appendChild(li);
+}
+</script>
+    <ul id="list"></ul>
+
+<script>
+let ul = document.getElementById("list");
+
+for (let i = 1; i <= 5; i++) {
+    let li = document.createElement("li");
+    li.textContent = "Item " + i;
+    ul.appendChild(li);
+}
+</script>
+
+    <div id="box">Hello</div>
+
+<script>
+document.getElementById("box").style.backgroundColor = "blue";
+document.getElementById("box").style.color = "white";
+</script>
+     <script>
+        document.querySelector("p").textContent = "Text changed by JavaScript";
+    </script>
+
+    <input type="text" id="taskInput">
+<button id="addBtn">Add Task</button>
+
+<ul id="list"></ul>
+
+<script>
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+let input3 = document.getElementById("taskInput");
+let button4 = document.getElementById("addBtn");
+let list = document.getElementById("list");
+
+// Display tasks
+function displayTasks() {
+    list.innerHTML = "";
+    tasks.forEach(task => {
+        let li = document.createElement("li");
+        li.textContent = task;
+        list.appendChild(li);
+    });
+}
+
+// Load tasks on page load
+displayTasks();
+
+// Add new task
+button.addEventListener("click", () => {
+    if (input.value !== "") {
+        tasks.push(input.value);
+
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+
+        input.value = "";
+
+        displayTasks();
+    }
+});
+</script>
+</body>
+</html>
