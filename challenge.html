@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoppingCart</title>
+
+    <style>
+     /* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Body Styling */
+body{
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Container */
+.container{
+    background: #fff;
+    width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* Title */
+.container h1{
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Input Fields */
+input{
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input:focus{
+    border-color: #4facfe;
+    box-shadow: 0 0 8px rgba(79,172,254,0.5);
+}
+
+/* Button */
+button{
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #4facfe;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{
+    background: #007bff;
+    transform: scale(1.03);
+}
+
+/* Cart List */
+#cartList{
+    list-style: none;
+    margin-top: 20px;
+    text-align: left;
+}
+
+#cartList li{
+    background: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+}
+
+/* Total */
+h2{
+    margin-top: 20px;
+    color: #222;
+}
+
+#total{
+    color: #007bff;
+    font-weight: bold;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Shopping Cart</h1>
+
+        <input type="text" id="name" placeholder="Enter item name">
+
+        <input type="number" id="price" placeholder="Enter price">
+
+        <button id="addBtn">Add to Cart</button>
+
+        <ul id="cartList"></ul>
+
+        <h2>Total: $<span id="total">0</span></h2>
+
+    </div>
+
+    <script src="challenge.js"></script>
+
+</body>
+</html>
